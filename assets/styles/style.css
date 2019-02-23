@@ -1,25 +1,45 @@
-@charset "UTF-8";
 /*
     Document   : screen
     Created on : Jan 30, 2014, 1:01:26 PM
     Author     : Jess Green <hello@jessgreen.io>
 */
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,700,200italic,700italic");
-
+@import url("https://fonts.googleapis.com/css?family=Montaga");
 main {
-  padding: 120px 40px 40px 40px;
   min-height: 100vh;
   text-align: center;
 }
 
+.bg {
+  background: #27c0e6;
+  background: -o-linear-gradient(top, #27c0e6 0%, #f7a934 100%);
+  background: -ms-linear-gradient(top, #27c0e6 0%, #f7a934 100%);
+  background: linear-gradient(to bottom, #27c0e6 0%, #f7a934 100%);
+}
+
+.screen-reader-text {
+  display: none;
+}
+
+html {
+  font-size: 18px;
+}
+
 body {
-  font: 1em/1.5 "Source Sans Pro", sans-serif;
+  font: 1.25em/1.5 "Montaga", serif;
   color: #272822;
+  min-height: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 canvas {
-  border: 1px solid #000;
-  background-color: #999;
+  background-color: transparent;
+  position: absolute;
+  top: 5%;
+  left: 12.5%;
+  width: 100px;
+  height: 100px;
 }
 
 strong {
@@ -53,7 +73,7 @@ a:active {
 }
 
 .wrapper {
-  width: 960px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -91,7 +111,7 @@ Headers
 ------------------------------------------------------------------------------*/
 .h {
   font-weight: 700;
-  margin-bottom: 1.25rem;
+  margin: 0 0 1.25rem;
   display: block;
 }
 .h1 {
@@ -150,11 +170,13 @@ Columns/Rows
 }
 .row:after {
   display: block;
-  height: 1px;
   float: none;
   clear: both;
-  content: ".";
+  content: "";
   visibility: hidden;
+}
+.row:last-of-type {
+  margin-bottom: 0;
 }
 
 .column {
@@ -177,9 +199,12 @@ Columns/Rows
 .data-table {
   display: table;
 }
+.data-table > li {
+  text-align: left;
+  display: table-row;
+}
 .data-table .label {
-  width: 9.375rem;
-  margin-right: 1.25rem;
+  padding-right: 1.25rem;
   display: table-cell;
 }
 .data-table .label:after {
@@ -187,6 +212,14 @@ Columns/Rows
 }
 .data-table .value {
   display: table-cell;
+}
+
+.ground-pane {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
 }
 
 .calendar {

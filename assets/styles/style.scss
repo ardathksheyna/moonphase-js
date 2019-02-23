@@ -3,137 +3,44 @@
     Created on : Jan 30, 2014, 1:01:26 PM
     Author     : Jess Green <hello@jessgreen.io>
 */
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,700,200italic,700italic');
-
-
-label,
-main {
-    background: var(--bg, white);
-    color: var(--text, black);
-}
-
-.theme-switch__input:checked ~ main,
-.theme-switch__input:checked ~ label {
-    --text: white;
-}
-
-.theme-switch__input:checked ~ main {
-    --gradDark: hsl(198, 44%, 11%);
-    --gradLight: hsl(198, 39%, 29%);
-}
-
-
-// Toggle switch
-.theme-switch__input,
-.theme-switch__label {
-    position: absolute;
-    z-index: 1;
-}
-
-.theme-switch__input {
-    opacity: 0;
-
-    &:hover,
-    &:focus {
-        + .theme-switch__label {
-            background-color: lightSlateGray;
-        }
-
-        + .theme-switch__label span::after {
-            background-color: lighten(lightBlue, 10%);
-        }
-    }
-}
-
-.theme-switch__label {
-    padding: 20px;
-    margin: 60px;
-    transition: background-color 200ms ease-in-out;
-    width: 120px;
-    height: 50px;
-    border-radius: 50px;
-    text-align: center;
-    background-color: slateGray;
-    box-shadow: -4px 4px 15px inset rgba(0, 0, 0, 0.4);
-
-    &::before,
-    &::after {
-        font-size: 2rem;
-        position: absolute;
-        transform: translate3d(0, -50%, 0);
-        top: 50%;
-    }
-
-    &::before {
-        content: '\263C';
-        right: 100%;
-        margin-right: 10px;
-        color: orange;
-    }
-
-    &::after {
-        content: '\263E';
-        left: 100%;
-        margin-left: 10px;
-        color: lightSlateGray;
-    }
-
-    span {
-        position: absolute;
-        bottom: calc(100% + 10px);
-        left: 0;
-        width: 100%;
-    }
-
-    span::after {
-        position: absolute;
-        top: calc(100% + 15px);
-        left: 5px;
-        width: 40px;
-        height: 40px;
-        content: '';
-        border-radius: 50%;
-        background-color: lightBlue;
-        transition: transform 200ms, background-color 200ms;
-        box-shadow: -3px 3px 8px rgba(0, 0, 0, 0.4);
-    }
-}
-
-// Checked label styles
-.theme-switch__input:checked ~ .theme-switch__label {
-    background-color: lightSlateGray;
-
-    &::before {
-        color: lightSlateGray;
-    }
-
-    &::after {
-        color: turquoise;
-    }
-
-    span::after {
-        transform: translate3d(70px, 0, 0);
-    }
-}
+@import url('https://fonts.googleapis.com/css?family=Montaga');
 
 main {
-    --gradDark: hsl(144, 100%, 89%);
-    --gradLight: hsl(42, 94%, 76%);
-    background: linear-gradient(to bottom, var(--gradDark), var(--gradLight));
-    padding: 120px 40px 40px 40px;
     min-height: 100vh;
     text-align: center;
 }
 
+.bg {
+    background: rgba(39,192,230,1);
+    background: -o-linear-gradient(top, rgba(39,192,230,1) 0%, rgba(247,169,52,1) 100%);
+    background: -ms-linear-gradient(top, rgba(39,192,230,1) 0%, rgba(247,169,52,1) 100%);
+    background: linear-gradient(to bottom, rgba(39,192,230,1) 0%, rgba(247,169,52,1) 100%);
+}
+
+.screen-reader-text {
+    display: none;
+}
+
+html {
+    font-size: 18px;
+}
 
 body {
-    font: 1em/1.5 'Source Sans Pro', sans-serif;
+    font: 1.25em/1.5 'Montaga', serif;
     color: #272822;
+    min-height: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 canvas {
-    border: 1px solid #000;
-    background-color: #999;
+    background-color: transparent;
+    position: absolute;
+    top: 5%;
+    left: 12.5%;
+    width: 100px;
+    height: 100px;
 }
 
 strong {
@@ -167,7 +74,7 @@ a:active {
 }
 
 .wrapper {
-    width: 960px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -204,7 +111,7 @@ Headers
 ------------------------------------------------------------------------------*/
 .h {
     font-weight: 700;
-    margin-bottom: 1.25rem;
+    margin: 0 0 1.25rem;
     display: block;
     &1 {
         font-size: 2rem;
@@ -270,11 +177,14 @@ Columns/Rows
     margin-bottom: 2.5rem;
     &:after {
         display: block;
-        height: 1px;
         float: none;
         clear: both;
-        content: ".";
+        content: "";
         visibility: hidden;
+    }
+
+    &:last-of-type {
+        margin-bottom: 0;
     }
 }
 
@@ -297,9 +207,13 @@ Columns/Rows
 
 .data-table {
     display: table;
+    > li {
+        text-align: left;
+        display: table-row;
+    }
+
     .label {
-        width: 9.375rem;
-        margin-right: 1.25rem;
+        padding-right: 1.25rem;
         display: table-cell;
         &:after {
             content: ":";
@@ -309,6 +223,14 @@ Columns/Rows
     .value {
         display: table-cell;
     }
+}
+
+.ground-pane {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
 }
 
 .calendar {
