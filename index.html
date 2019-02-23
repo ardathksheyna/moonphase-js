@@ -1,19 +1,32 @@
-<div class="wrapper">
-  <header class="row">
-    <h1 class="h h1">MoonPhase App</h1>
-  </header>
-    <div class="row">
-        <ul class="data-table h3">
-             <li>
-                <strong class="label">Current Date</strong><span class="value js-current-date-value"></span>
-            </li>
+<!doctype html>
+<html>
+<head>
+    <title>Moonphases</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ocanvas/2.8.3/ocanvas.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-            <li>
-                <strong class="label">Selected Date</strong><span class="js-date-value value"></span>
-            </li>
-        </ul>
-    </div>
-    <div class="row">
+<div class="wrapper">
+    <header class="row">
+        <h1 class="h h1">MoonPhase App</h1>
+    </header>
+
+    <main>
+        <div class="row">
+            <ul class="data-table h3">
+                <li>
+                    <strong class="label">Current Date</strong><span class="value js-current-date-value"></span>
+                </li>
+
+                <li>
+                    <strong class="label">Selected Date</strong><span class="js-date-value value"></span>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
             <ul class="hlist">
                 <li>
                     <a href="#" data-name="prev" class="js-date-nav btn">&laquo; Back One Day</a>
@@ -25,22 +38,27 @@
                     <a href="#" data-name="next" class="js-date-nav btn">Forward One Day &raquo;</a>
                 </li>
             </ul>
-    </div>
-
-    <div class="row">
-        <canvas class="column" id="currentphase" height="288" width="288">
-            You need a browser that supports HTML5 and JavaScript enabled to see this.
-        </canvas>
-        <div class="column-last">
-            <h3 class="h h3">Current Phase Data</h3>
-            <ul class="data-table js-moon-data">
-                <li><strong class="label">Current Phase</strong> <span data-name="currentPhase" class="value"></span></li>
-                <li><strong class="label">Julian Date</strong> <span data-name="julianDate" class="value"></span></li>
-                <li><strong class="label">Moon's Age</strong> <span data-name="synodicAge" class="value"></span></li>
-                <li><strong class="label">Phase Angle</strong> <span data-name="phaseAngle" class="value"></span></li>
-                <li><strong class="label">Percent Illuminated</strong> <span data-name="illumination" class="value"></span></li>
-                <li><strong class="label">Distance</strong> <span data-name="distance" class="value"></span></li>
-            </ul>
         </div>
-    </div>
+        <div class="row">
+            <canvas class="column" id="currentphase" height="288" width="288">
+                You need a browser that supports HTML5 and JavaScript enabled to see this.
+            </canvas>
+            <div class="column-last">
+                <h3 class="h h3">Current Phase Data</h3>
+                <ul class="data-table js-moon-data">
+                    <li><strong class="label">Current Phase</strong> <span data-name="currentPhase" class="value"></span>
+                    </li>
+                    <li><strong class="label">Julian Date</strong> <span data-name="julianDate" class="value"></span></li>
+                    <li><strong class="label">Moon's Age</strong> <span data-name="synodicAge" class="value"></span></li>
+                    <li><strong class="label">Phase Angle</strong> <span data-name="phaseAngle" class="value"></span></li>
+                    <li><strong class="label">Percent Illuminated</strong> <span data-name="illumination"
+                                                                                 class="value"></span></li>
+                    <li><strong class="label">Distance</strong> <span data-name="distance" class="value"></span></li>
+                </ul>
+            </div>
+        </div>
+    </main>
 </div> <!-- .wrapper -->
+
+</body>
+</html>
