@@ -17,6 +17,45 @@ main {
     background: linear-gradient(to bottom, rgba(39,192,230,1) 0%, rgba(247,169,52,1) 100%);
 }
 
+.bg-evening {
+    background: rgba(0,0,0,1);
+    background: -o-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,44,97,1) 63%, rgba(247,169,52,1) 100%);
+    background: -ms-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,44,97,1) 63%, rgba(247,169,52,1) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,44,97,1) 63%, rgba(247,169,52,1) 100%);
+}
+
+
+.bg-night {
+    background: rgba(0,21,46,1);
+    background: -o-linear-gradient(top, rgba(0,21,46,1) 0%, rgba(0,44,97,1) 75%, rgba(25,140,166,1) 100%);
+    background: -ms-linear-gradient(top, rgba(0,21,46,1) 0%, rgba(0,44,97,1) 75%, rgba(25,140,166,1) 100%);
+    background: linear-gradient(to bottom, rgba(0,21,46,1) 0%, rgba(0,44,97,1) 75%, rgba(25,140,166,1) 100%);
+}
+
+.hills {
+    height: 500px;
+    background-color: #000;
+    -webkit-mask-image: url(../images/hills.svg);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: top;
+    -webkit-mask-size: cover;
+}
+
+.bg-daytime {
+    .hills {
+        background: rgba(156,173,24,1);
+        background: -o-linear-gradient(top, rgba(156,173,24,1) 0%, rgba(57,66,0,1) 100%);
+        background: -ms-linear-gradient(top, rgba(156,173,24,1) 0%, rgba(57,66,0,1) 100%);
+        background: linear-gradient(to bottom, rgba(156,173,24,1) 0%, rgba(57,66,0,1) 100%);
+    }
+}
+
+
+.ground {
+    padding-top: 250px;
+}
+
+
 .screen-reader-text {
     display: none;
 }
@@ -37,10 +76,11 @@ body {
 canvas {
     background-color: transparent;
     position: absolute;
-    top: 5%;
-    left: 12.5%;
-    width: 100px;
-    height: 100px;
+    top: calc(25% - 150px);
+    left: calc(25% - 150px);
+    width: 150px;
+    height: 150px;
+    transform: rotate(30deg);
 }
 
 strong {
@@ -206,7 +246,9 @@ Columns/Rows
 }
 
 .data-table {
+    font-style: italic;
     display: table;
+    margin-top: 0;
     > li {
         text-align: left;
         display: table-row;
@@ -229,7 +271,6 @@ Columns/Rows
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: black;
     color: white;
 }
 

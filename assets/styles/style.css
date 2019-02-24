@@ -16,6 +16,40 @@ main {
   background: linear-gradient(to bottom, #27c0e6 0%, #f7a934 100%);
 }
 
+.bg-evening {
+  background: black;
+  background: -o-linear-gradient(top, black 0%, #002c61 63%, #f7a934 100%);
+  background: -ms-linear-gradient(top, black 0%, #002c61 63%, #f7a934 100%);
+  background: linear-gradient(to bottom, black 0%, #002c61 63%, #f7a934 100%);
+}
+
+.bg-night {
+  background: #00152e;
+  background: -o-linear-gradient(top, #00152e 0%, #002c61 75%, #198ca6 100%);
+  background: -ms-linear-gradient(top, #00152e 0%, #002c61 75%, #198ca6 100%);
+  background: linear-gradient(to bottom, #00152e 0%, #002c61 75%, #198ca6 100%);
+}
+
+.hills {
+  height: 500px;
+  background-color: #000;
+  -webkit-mask-image: url(../images/hills.svg);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: top;
+  -webkit-mask-size: cover;
+}
+
+.bg-daytime .hills {
+  background: #9cad18;
+  background: -o-linear-gradient(top, #9cad18 0%, #394200 100%);
+  background: -ms-linear-gradient(top, #9cad18 0%, #394200 100%);
+  background: linear-gradient(to bottom, #9cad18 0%, #394200 100%);
+}
+
+.ground {
+  padding-top: 250px;
+}
+
 .screen-reader-text {
   display: none;
 }
@@ -36,10 +70,11 @@ body {
 canvas {
   background-color: transparent;
   position: absolute;
-  top: 5%;
-  left: 12.5%;
-  width: 100px;
-  height: 100px;
+  top: calc(25% - 150px);
+  left: calc(25% - 150px);
+  width: 150px;
+  height: 150px;
+  transform: rotate(30deg);
 }
 
 strong {
@@ -197,7 +232,9 @@ Columns/Rows
 }
 
 .data-table {
+  font-style: italic;
   display: table;
+  margin-top: 0;
 }
 .data-table > li {
   text-align: left;
@@ -218,7 +255,6 @@ Columns/Rows
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: black;
   color: white;
 }
 
