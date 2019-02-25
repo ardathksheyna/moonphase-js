@@ -253,7 +253,7 @@ MoonFx = (function(){
 
     var MoonPhase = MoonPhase || {};
 
-    var debug = true;
+    var debug = false;
 
     MoonPhase.moonFx = new MoonFx();
     MoonPhase.currentTime = new Date().getTime();
@@ -429,21 +429,28 @@ MoonFx = (function(){
                 success: function (data) {
                     var sunrise = new Date(data.results.sunrise).getTime();
                     var sunset = new Date(data.results.sunset).getTime();
+                    var twilight_end = new Date(data.results.civil_twilight_end).getTime();
+                    var twilight_begin = new Date(data.results.civil_twilight_begin).getTime();
                     var now = Date.now();
 
                     if (sunrise < now && now < sunset) {
                         console.log('its after sunrise but before sunset');
-                        $body.addClass('bg-daytime');
-                    } else if (now > sunset) {
+                        $body.addClass('bg--daytime');
+                    } else if (now > sunset && now < twilight_end) {
                         console.log('it is now after sunset');
                         $body
-                            .removeClass('bg-daytime')
-                            .addClass('bg-evening');
-                    } else if (now < sunrise) {
-                        console.log('it is now before sunrise');
+                            .removeClass()
+                            .addClass('bg--evening');
+                    } else if (now > twilight_end) {
+                        console.log('it is now night');
                         $body
-                            .removeClass('bg-evening')
-                            .addClass('bg-night');
+                            .removeClass()
+                            .addClass('bg--night');
+                    } else if (now > twilight_begin) {
+                        console.log('it is predawn');
+                        $body
+                            .removeClass()
+                            .addClass('bg--morning');
                     }
                 },
                 error: function (data) {

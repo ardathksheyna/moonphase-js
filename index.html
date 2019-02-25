@@ -11,9 +11,14 @@
     <link rel="stylesheet" href="assets/styles/normalize.css">
     <link rel="stylesheet" href="assets/styles/style.css">
 </head>
-<body class="bg">
+<body class="bg--daytime">
 
 <div class="wrapper">
+    <input type="checkbox" name="switch" class="pill-switch" id="pillSwitch">
+    <label for="pillSwitch">
+        <span class="label">Animate</span>
+    </label>
+
     <main>
         <header class="screen-reader-text">
             <h1 class="h h1">MoonPhase App</h1>
@@ -21,21 +26,18 @@
         <canvas id="currentphase" height="288" width="288">
             You need a browser that supports HTML5 and JavaScript enabled to see this.
         </canvas>
-
-
-        <footer class="ground-pane hills row">
-            <div class="ground">
-                <ul class="data-table js-moon-data">
-                    <li><strong class="label">Current Phase</strong> <span data-name="currentPhase" class="value"></span>
-                    </li>
-                    <li><strong class="label">Julian Date</strong> <span data-name="julianDate" class="value"></span></li>
-                    <li><strong class="label">Moon's Age</strong> <span data-name="synodicAge" class="value"></span></li>
-                    <li><strong class="label">Phase Angle</strong> <span data-name="phaseAngle" class="value"></span></li>
-                    <li><strong class="label">Percent Illuminated</strong> <span data-name="illumination"
-                                                                                 class="value"></span></li>
-                    <li><strong class="label">Distance</strong> <span data-name="distance" class="value"></span></li>
-                </ul>
-            </div>
+        <div class="clouds"></div>
+        <ul class="data-table js-moon-data">
+            <li><strong class="label">Current Phase</strong> <span data-name="currentPhase" class="value"></span>
+            </li>
+            <li><strong class="label">Julian Date</strong> <span data-name="julianDate" class="value"></span></li>
+            <li><strong class="label">Moon's Age</strong> <span data-name="synodicAge" class="value"></span></li>
+            <li><strong class="label">Phase Angle</strong> <span data-name="phaseAngle" class="value"></span></li>
+            <li><strong class="label">Percent Illuminated</strong> <span data-name="illumination"
+                                                                         class="value"></span></li>
+            <li><strong class="label">Distance</strong> <span data-name="distance" class="value"></span></li>
+        </ul>
+        <footer class="ground-pane grass row">
         </footer>
 
     </main>
