@@ -421,11 +421,15 @@ MoonFx = (function(){
             }
 
             var $body = $('body');
+            var $loaderScreen = $('#loader-screen');
 
             $.ajax({
                 url: endPoint,
                 jsonp: true,
                 data: coords,
+                beforeSend: function () {
+                    $loaderScreen.removeClass('hide').addClass('show');
+                },
                 success: function (data) {
                     var sunrise = new Date(data.results.sunrise).getTime();
                     var sunset = new Date(data.results.sunset).getTime();
@@ -455,6 +459,9 @@ MoonFx = (function(){
                 },
                 error: function (data) {
                     console.log(data);
+                },
+                complete: function () {
+                    $loaderScreen.removeClass('show').addClass('hide');
                 }
             });
 
