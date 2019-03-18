@@ -262,31 +262,31 @@ MoonFx = (function(){
         /**
          * New Moon
          */
-        this.AGE_NEW_MOON = 0;
+        AGE_NEW_MOON = 0;
 
         /**
          * First Quarter Moon
          */
-        this.AGE_FIRST_QUARTER_MOON = 7;
+        AGE_FIRST_QUARTER_MOON = 7;
 
         /**
          * Full Moon
          */
-        this.AGE_FULL_MOON = 14;
+        AGE_FULL_MOON = 14;
 
         /**
          * Last Quarter Moon
          */
-        this.AGE_LAST_QUARTER_MOON = 21;
+        AGE_LAST_QUARTER_MOON = 21;
 
-        this.NEW_MOON        = "NewMoon";
-        this.WAXING_CRESCENT = "WaxingCrescent";
-        this.FIRST_QUARTER   = "FirstQuarter";
-        this.WAXING_GIBBOUS  = "WaxingGibbous";
-        this.FULL_MOON       = "FullMoon";
-        this.WANING_GIBBOUS  = "WaningGibbous";
-        this.LAST_QUARTER    = "LastQuarter";
-        this.WANING_CRESCENT = "WaningCrescent";
+        NEW_MOON        = "NewMoon";
+        WAXING_CRESCENT = "WaxingCrescent";
+        FIRST_QUARTER   = "FirstQuarter";
+        WAXING_GIBBOUS  = "WaxingGibbous";
+        FULL_MOON       = "FullMoon";
+        WANING_GIBBOUS  = "WaningGibbous";
+        LAST_QUARTER    = "LastQuarter";
+        WANING_CRESCENT = "WaningCrescent";
 
         getPhaseName: function(synodicAge) {
             let phaseName = '';
@@ -401,7 +401,7 @@ MoonFx = (function(){
         init : function() {
             var moonData = MoonPhase.moonFx.MOON_DATA;
             
-            moonData['phaseName'] = this.PhaseNames.getPhaseName(this.moonFx.getSynodicPhase())
+            moonData['phaseName'] = this.PhaseNames.getPhaseName(this.moonFx.getSynodicPhase());
 
             $('.js-moon-data .value').each(function(){
                 var name = $(this).data('name');
