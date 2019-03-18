@@ -299,16 +299,16 @@ MoonFx = (function(){
                 phaseName = this.WAXING_CRESCENT;
             } else if (synodicAge >= this.AGE_FIRST_QUARTER_MOON && synodicAge < (this.AGE_FIRST_QUARTER_MOON + 1)) {
                 // First Quarter Moon
-                phaseName = FIRST_QUARTER;
+                phaseName = this.FIRST_QUARTER;
             } else if (synodicAge > (this.AGE_FIRST_QUARTER_MOON + 1) && synodicAge < this.AGE_FULL_MOON) {
                 // Waxing Gibbous
-                phaseName = WAXING_GIBBOUS;
+                phaseName = this.WAXING_GIBBOUS;
             } else if (synodicAge >= this.AGE_FULL_MOON && synodicAge < (this.AGE_FULL_MOON + 1)) {
                 // Full Moon
-                phaseName = FULL_MOON;
+                phaseName = this.FULL_MOON;
             } else if (synodicAge >= (this.AGE_FULL_MOON + 1) && synodicAge < this.AGE_LAST_QUARTER_MOON) {
                 // Waning Gibbous
-                phaseName = WANING_GIBBOUS;
+                phaseName = this.WANING_GIBBOUS;
             } else if (synodicAge >= this.AGE_LAST_QUARTER_MOON && synodicAge < (this.AGE_LAST_QUARTER_MOON + 1)) {
                 // Last Quarter Moon
                 phaseName = this.LAST_QUARTER;
