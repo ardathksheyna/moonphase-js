@@ -401,7 +401,7 @@ MoonFx = (function(){
         init : function() {
             var moonData = MoonPhase.moonFx.MOON_DATA;
             
-            moonData['phaseName'] = MoonPhase.PhaseNames.getPhaseName(MoonPhase.moonFx.getSynodicPhase());
+            moonData['phaseName'] = this.PhaseNames.getPhaseName(this.moonFx.getSynodicPhase())
 
             $('.js-moon-data .value').each(function(){
                 var name = $(this).data('name');
