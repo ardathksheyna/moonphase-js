@@ -262,31 +262,31 @@ MoonFx = (function(){
         /**
          * New Moon
          */
-        AGE_NEW_MOON = 0;
+        AGE_NEW_MOON: 0;
 
         /**
          * First Quarter Moon
          */
-        AGE_FIRST_QUARTER_MOON = 7;
+        AGE_FIRST_QUARTER_MOON: 7;
 
         /**
          * Full Moon
          */
-        AGE_FULL_MOON = 14;
+        AGE_FULL_MOON: 14;
 
         /**
          * Last Quarter Moon
          */
-        AGE_LAST_QUARTER_MOON = 21;
+        AGE_LAST_QUARTER_MOON: 21;
 
-        NEW_MOON        = "NewMoon";
-        WAXING_CRESCENT = "WaxingCrescent";
-        FIRST_QUARTER   = "FirstQuarter";
-        WAXING_GIBBOUS  = "WaxingGibbous";
-        FULL_MOON       = "FullMoon";
-        WANING_GIBBOUS  = "WaningGibbous";
-        LAST_QUARTER    = "LastQuarter";
-        WANING_CRESCENT = "WaningCrescent";
+        NEW_MOON        : "NewMoon";
+        WAXING_CRESCENT : "WaxingCrescent";
+        FIRST_QUARTER   : "FirstQuarter";
+        WAXING_GIBBOUS  : "WaxingGibbous";
+        FULL_MOON       : "FullMoon";
+        WANING_GIBBOUS  : "WaningGibbous";
+        LAST_QUARTER    : "LastQuarter";
+        WANING_CRESCENT : "WaningCrescent";
 
         getPhaseName: function(synodicAge) {
             let phaseName = '';
