@@ -12,7 +12,7 @@
         MoonPhase.SunriseSunset.init();
     });
 
-    let debug = true;
+    let debug = false;
 
     let MoonPhase = {};
 
