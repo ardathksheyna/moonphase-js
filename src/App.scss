@@ -1,0 +1,429 @@
+/*
+    Document   : screen
+    Created on : Jan 30, 2014, 1:01:26 PM
+*/
+@import url('https://fonts.googleapis.com/css?family=Montaga');
+
+main {
+    margin-top: -33px; /* wtf? */
+    min-height: 100vh;
+    text-align: center;
+}
+
+.pill-switch {
+    opacity: 0;
+}
+
+label {
+    display: block;
+    background-color: #6d7c8b;
+    color: #fff;
+    width: 75px;
+    height: 40px;
+    border-radius: 37px;
+    position: absolute;
+    z-index: 9;
+    right: 200px;
+    top: 40px;
+    box-shadow: inset 0 0 4px #000;
+
+> span {
+    font-size: smaller;
+    text-align: center;
+    position: absolute;
+    top: -30px;
+    width: 100%;
+
+&:after {
+     content: '';
+     display: block;
+     position: absolute;
+     top: 35px;
+     left: 4px;
+     height: 30px;
+     width: 30px;
+     background-color: #8e9398;
+     border-radius: 30px;
+     box-shadow: 0 0 4px rgba(0, 0, 0, 0.75);
+ }
+}
+}
+
+.body {
+  width: 100%;
+  height: 100%;
+}
+
+.pill-switch:checked ~ label {
+    background-color: #8adcf1;
+> span {
+&:after {
+     left: 38px;
+     background-color: #92b3b5;
+ }
+}
+}
+
+.pill-switch:checked ~ main {
+.clouds {
+    animation: move-clouds-back 200s linear infinite;
+}
+}
+
+@keyframes move-clouds-back {
+    from {-webkit-mask-position: 0 0;}
+    to {-webkit-mask-position: 10000px 0;}
+}
+
+.grass {
+    background-color: #000;
+    -webkit-mask-image: url(images/grass.png);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: top;
+    -webkit-mask-size: cover;
+}
+
+.clouds {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 600px;
+    -webkit-mask-image: url(images/clouds-02.png);
+    -webkit-mask-repeat: repeat-x;
+    -webkit-mask-size: contain;
+    background: linear-gradient(to bottom, rgba(248,181,0,1) 0%, rgba(252,205,77,1) 32%, rgba(251,223,147,1) 62%, rgba(255,255,255,1) 100%);
+}
+
+.bg {
+
+&--morning {
+     background: rgba(0,0,0,1);
+     background: -o-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(28,53,130,1) 25%, rgba(28,128,128,1) 55%, rgba(255,203,71,1) 100%);
+     background: -ms-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(28,53,130,1) 25%, rgba(28,128,128,1) 55%, rgba(255,203,71,1) 100%);
+     background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(28,53,130,1) 25%, rgba(28,128,128,1) 55%, rgba(255,203,71,1) 100%);
+ }
+
+&--daytime {
+     background: rgba(39,192,230,1);
+     background: -o-linear-gradient(top, rgba(39,192,230,1) 0%, rgba(247,169,52,1) 100%);
+     background: -ms-linear-gradient(top, rgba(39,192,230,1) 0%, rgba(247,169,52,1) 100%);
+     background: linear-gradient(to bottom, rgba(39,192,230,1) 0%, rgba(247,169,52,1) 100%);
+
+.grass {
+    background: rgba(156,173,24,1);
+    background: -o-linear-gradient(top, rgba(156,173,24,1) 0%, rgba(57,66,0,1) 100%);
+    background: -ms-linear-gradient(top, rgba(156,173,24,1) 0%, rgba(57,66,0,1) 100%);
+    background: linear-gradient(to bottom, rgba(156,173,24,1) 0%, rgba(57,66,0,1) 100%);
+}
+
+.clouds {
+    background: rgba(145,145,145,1);
+    background: -o-linear-gradient(top, rgba(145,145,145,1) 0%, rgba(255,255,255,1) 2%, rgba(143,214,230,1) 52%, rgba(162,168,104,1) 100%);
+    background: -ms-linear-gradient(top, rgba(145,145,145,1) 0%, rgba(255,255,255,1) 2%, rgba(143,214,230,1) 52%, rgba(162,168,104,1) 100%);
+    background: linear-gradient(to bottom, rgba(145,145,145,1) 0%, rgba(255,255,255,1) 2%, rgba(143,214,230,1) 52%, rgba(162,168,104,1) 100%);
+}
+}
+
+&--evening {
+     background: rgba(0,0,0,1);
+     background: -o-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,45,97,1) 75%, rgba(148,102,33,1) 100%);
+     background: -ms-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,45,97,1) 75%, rgba(148,102,33,1) 100%);
+     background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,45,97,1) 75%, rgba(148,102,33,1) 100%);
+
+.grass {
+    background: rgba(50,128,76,1);
+    background: -o-linear-gradient(top, rgba(50,128,76,1) 0%, rgba(8,56,25,1) 50%, rgba(2,41,15,1) 100%);
+    background: -ms-linear-gradient(top, rgba(50,128,76,1) 0%, rgba(8,56,25,1) 50%, rgba(2,41,15,1) 100%);
+    background: linear-gradient(to bottom, rgba(50,128,76,1) 0%, rgba(8,56,25,1) 50%, rgba(2,41,15,1) 100%);
+}
+
+.clouds {
+    background: linear-gradient(to top, #f84500 25%, #fc9b4d 32%, #fbbc93 62%, white 80%);
+}
+}
+
+&--night {
+     background: rgba(0,21,46,1);
+     background: -o-linear-gradient(top, rgba(0,21,46,1) 0%, rgba(0,44,97,1) 75%, rgba(25,140,166,1) 100%);
+     background: -ms-linear-gradient(top, rgba(0,21,46,1) 0%, rgba(0,44,97,1) 75%, rgba(25,140,166,1) 100%);
+     background: linear-gradient(to bottom, rgba(0,21,46,1) 0%, rgba(0,44,97,1) 75%, rgba(25,140,166,1) 100%);
+
+.clouds {
+    background: linear-gradient(to top, #00152e 0%, #002d61 32%, #27c0e6 62%, white 75%);
+}
+}
+}
+
+
+.screen-reader-text {
+    display: none;
+}
+
+html {
+    font-size: 18px;
+}
+
+body {
+    font: 1.25em/1.5 'Montaga', serif;
+    color: #272822;
+    min-height: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+canvas {
+    background-color: transparent;
+    position: absolute;
+    top: calc(25% - 150px);
+    left: calc(25% - 150px);
+    width: 150px;
+    height: 150px;
+    transform: rotate(30deg);
+}
+
+strong {
+    font-weight: 700;
+}
+
+em, cite {
+    font-style: italic;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a,
+a:link {
+    text-decoration: none;
+    color: #99C62A;
+}
+
+a:visited {
+    color: #66D9EF;
+}
+
+a:hover {
+    color: #F92672;
+}
+
+a:active {
+    color: #FD971F;
+}
+
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+button.btn,
+input.btn {
+    outline: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+a.btn {
+    color: #272822;
+    font-size: small;
+}
+
+.btn.btn-narrow {
+    padding: 2px 15px;
+}
+
+.btn {
+    display: inline-block;
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.75);
+    background-color: #66D9EF;
+    border-radius: 3px;
+    padding: 5px 15px;
+    border: 1px solid #34A7BD;
+}
+
+.btn:hover {
+    box-shadow: inset -1px -1px 0 rgba(255, 255, 255, 0.75);
+}
+/*------------------------------------------------------------------------------
+Headers
+------------------------------------------------------------------------------*/
+.h {
+    font-weight: 700;
+    margin: 0 0 1.25rem;
+    display: block;
+&1 {
+    font-size: 2rem;
+}
+
+&2 {
+    font-size: 1.5rem;
+}
+
+&3 {
+    font-size: 1.25rem;
+}
+
+&4 {
+    font-size: 1rem;
+}
+
+&5 {
+    font-size: 0.875rem;
+}
+
+&6 {
+    font-size: 0.75rem;
+}
+}
+
+/*------------------------------------------------------------------------------
+Horizontal list
+------------------------------------------------------------------------------*/
+.hlist {
+    list-style: none;
+    clear: both;
+    float: none;
+    margin: 0;
+    padding: 0;
+&:after {
+     display: block;
+     height: 1px;
+     float: none;
+     clear: both;
+     content: ".";
+     visibility: hidden;
+ }
+
+> li {
+    float: left;
+    margin-right: 20px;
+&:last-of-type {
+     margin-right: 0;
+ }
+}
+
+}
+
+
+/*------------------------------------------------------------------------------
+Columns/Rows
+------------------------------------------------------------------------------*/
+.row {
+    clear: both;
+    float: none;
+    display: block;
+    margin-bottom: 2.5rem;
+&:after {
+     display: block;
+     float: none;
+     clear: both;
+     content: "";
+     visibility: hidden;
+ }
+
+&:last-of-type {
+     margin-bottom: 0;
+ }
+}
+
+.column {
+    float: left;
+    margin-right: 1.25rem;
+}
+
+.column-last {
+    margin-right: 0;
+}
+
+.small-input {
+    width: 54px;
+}
+
+.moondata {
+    padding-top: 2.5rem;
+}
+
+.data-table {
+    font-style: italic;
+    display: table;
+    margin-top: 0;
+    position: absolute;
+    z-index: 9;
+    padding: 20px;
+    border-radius: 20px;
+    width: 480px;
+    height: 240px;
+    box-sizing: border-box;
+
+&.moon-data {
+     color: white;
+     border: 1px solid black;
+     background-color: rgba(0, 0, 0, 0.8);
+     bottom: calc(50% - 240px);
+     right: calc(75% - 120px);
+ }
+
+&.sun-data {
+     color: black;
+     border: 1px solid rgb(255, 183, 18);
+     background-color: rgba(255, 183, 18, 0.8);
+     bottom: calc(50% - 240px);
+     left: calc(75% - 120px);
+ }
+
+> li {
+    text-align: left;
+    display: table-row;
+}
+
+.label {
+    padding-right: 1.25rem;
+    display: table-cell;
+&:after {
+     content: ":";
+ }
+}
+
+.value {
+    display: table-cell;
+}
+}
+
+.ground-pane {
+    padding-top: 200px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}
+
+.calendar {
+    width: 98%;
+    margin-bottom: 2.5rem;
+}
+
+.calendar th {
+    font-weight: 700;
+    width: 14%;
+}
+
+.calendar td {
+    border: 1px solid;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: right;
+    height: 135px;
+}
+
+.calendar .moonphase {
+    font-weight: 700;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
