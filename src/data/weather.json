@@ -1,0 +1,45 @@
+{
+  "coord": {
+    "lon": -92.97,
+    "lat": 45.27
+  },
+  "weather": [
+    {
+      "id": 500,
+      "main": "Rain",
+      "description": "light rain",
+      "icon": "10d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 39.72,
+    "feels_like": 33.35,
+    "temp_min": 39,
+    "temp_max": 41,
+    "pressure": 1008,
+    "humidity": 93
+  },
+  "wind": {
+    "speed": 6.67,
+    "deg": 3
+  },
+  "rain": {
+    "3h": 0.76
+  },
+  "clouds": {
+    "all": 100
+  },
+  "dt": 1585181759,
+  "sys": {
+    "type": 3,
+    "id": 2003312,
+    "country": "US",
+    "sunrise": 1585137863,
+    "sunset": 1585182646
+  },
+  "timezone": -18000,
+  "id": 0,
+  "name": "Forest Lake",
+  "cod": 200
+}
