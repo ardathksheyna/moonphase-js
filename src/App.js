@@ -3,11 +3,8 @@ import {PillControl} from "./components/controls/PillControl"
 import {Moon} from "./components/Moon"
 import {DataTableMoon} from "./components/DataTable_Moon"
 import {DataTableSun} from "./components/DataTable_Sun"
-import {getMoonData} from "./components/helpers/moonfx"
 
 function App() {
-
-    const moonData = getMoonData()
 
     return (
         <div className="body bg--daytime">

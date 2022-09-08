@@ -30,7 +30,7 @@ const PI_RADIANS = Math.PI * 2
  *
  * @type number
  */
-let moonDate = new Date().getTime()
+export const currentTime = new Date().getTime()
 
 
 export function getMoonData() {
@@ -44,35 +44,12 @@ export function getMoonData() {
 }
 
 /**
- * Set the current date
- *
- * @param {number} date
- * @returns {undefined}
- */
-export function setDate(date) {
-    moonDate = date;
-}
-
-
-/**
- * Get current date
- *
- * @returns {number}
- */
-export function getDate() {
-    return moonDate;
-}
-
-
-/**
  * Get current Julian Date
  *
  * @returns {Number}
  */
 export function getJulianDate(){
-    let time = getDate();
-
-    return ((time / 1000) / ONE_DAY) + 2440587.5;
+    return ((currentTime / 1000) / ONE_DAY) + 2440587.5;
 }
 
 
@@ -204,7 +181,7 @@ function _signum(x) {
  * Convert degrees to radians
  *
  * @param {Number} x
- * @returns {Number|@exp;Math@pro;PI}
+ * @returns {Number}
  */
 function _deg2rad (x) {
     return x * (Math.PI / 180);
