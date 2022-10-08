@@ -5,12 +5,28 @@ const END_POINT = 'https://api.sunrise-sunset.org/json'
 const END_POINT_TEST = 'assets/test/sunrise-sunset.json'
 let data = {}
 
-export function getSunRiseSet(position) {
-
+export async function getSunRiseSet(position) {
     const {latitude, longitude} = position.coords
-    const date                  = moment(currentTime).format('YYYY-MM-DD')
-    console.log(latitude, longitude, date)
+    const date = moment(currentTime).format('YYYY-MM-DD')
+    const params = new URLSearchParams({
+        lat: latitude,
+        lng: longitude,
+        date: date,
+        formatted: 0
+    })
 
+    const data = await fetch(END_POINT_TEST + '?' + params, {
+        method: 'GET'
+    }).then((data) => {
+        return data.json();
+    })
+
+    if (data.status !== 'OK') {
+        // then do some shit
+        return {}
+    }
+
+    return data.results;
     // let coords = $.param({
     //     lat: position.coords.latitude,
     //     lng: position.coords.longitude,
@@ -71,13 +87,10 @@ export function getSunRiseSet(position) {
     //         console.log(data);
     //     }
     // });
-
 }
 
-export function getPosition(options?: PromiseOptions): Promise {
-    return new Promise((resolve, reject) => {
-        navigator.geolocation.getCurrentPosition((position) => {
-            getSunRiseSet(position)
-        })
-    })
+export async function getPosition(options?: PromiseOptions): Promise {
+    return new Promise((resolve, reject) =>
+        navigator.geolocation.getCurrentPosition(resolve, reject, options)
+    );
 }
