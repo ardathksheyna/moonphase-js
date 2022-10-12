@@ -1,5 +1,6 @@
 import moment from "moment/moment"
 import {currentTime} from "./moonfx"
+import { getCacheData, setCacheData, WEATHER_DATA, SUN_DATA } from "./cache"
 
 const END_POINT = 'https://api.sunrise-sunset.org/json'
 const END_POINT_TEST = 'assets/test/sunrise-sunset.json'
@@ -15,6 +16,11 @@ export async function getSunRiseSet(position) {
         formatted: 0
     })
 
+    let cached_data = getCacheData(SUN_DATA)
+    if (cached_data) {
+        return JSON.parse(cached_data)
+    }
+
     const data = await fetch(END_POINT_TEST + '?' + params, {
         method: 'GET'
     }).then((data) => {
@@ -25,6 +31,9 @@ export async function getSunRiseSet(position) {
         // then do some shit
         return {}
     }
+
+    // set cache
+    setCacheData(SUN_DATA, JSON.stringify(data.results));
 
     return data.results;
     // let coords = $.param({

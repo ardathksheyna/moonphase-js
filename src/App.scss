@@ -50,8 +50,8 @@ label {
 }
 
 .body {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 
 .pill-switch:checked ~ label {
@@ -371,7 +371,7 @@ Columns/Rows
     border: 1px solid black;
     background-color: rgba(0, 0, 0, 0.8);
     bottom: calc(50% - 240px);
-    right: calc(75% - 120px);
+    right: calc(70% - 120px);
   }
 
   &.sun-data {
@@ -379,7 +379,7 @@ Columns/Rows
     border: 1px solid rgb(255, 183, 18);
     background-color: rgba(255, 183, 18, 0.8);
     bottom: calc(50% - 240px);
-    left: calc(75% - 120px);
+    left: calc(70% - 120px);
   }
 
   > li {
