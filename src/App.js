@@ -3,11 +3,32 @@ import {PillControl} from "./components/controls/PillControl"
 import {Moon} from "./components/Moon"
 import {DataTableMoon} from "./components/DataTable_Moon"
 import {DataTableSun} from "./components/DataTable_Sun"
+import {useEffect, useState} from "react"
+import {getPosition, getSunRiseSet, timeOfDay} from "./components/helpers/sundata"
+import {getWeatherData} from "./components/helpers/weatherdata"
 
 function App() {
+    const [position, setPosition] = useState({ position: {}})
+    const [sunTimes, setSunTimes] = useState({})
+    const [dayTime, setDayTime] = useState({})
+    const [currentWeather, setCurrentWeather] = useState({})
+
+    useEffect(() => {
+        getPosition().then((positionData) => {
+            setPosition(positionData.coords)
+            getSunRiseSet(positionData).then((sunData) => {
+                setSunTimes(sunData)
+                setDayTime(timeOfDay(sunData))
+            })
+
+            getWeatherData(positionData).then((weatherData) => {
+                setCurrentWeather(weatherData)
+            })
+        })
+    }, [])
 
     return (
-        <div className="body bg--daytime">
+        <div className={`body ${dayTime}`}>
             <PillControl/>
             <main>
                 <header className="screen-reader-text">
@@ -16,7 +37,7 @@ function App() {
                 <Moon />
                 <div className="clouds"></div>
                 <DataTableMoon />
-                <DataTableSun />
+                <DataTableSun sunTimes={sunTimes} />
                 <footer className="ground-pane grass row">
                 </footer>
             </main>
