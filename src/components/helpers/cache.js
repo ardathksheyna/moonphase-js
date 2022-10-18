@@ -42,10 +42,7 @@ export function setCacheData(key, data, type) {
  * @returns {string|boolean}
  */
 export function getCacheData(key) {
-    let expiration = localStorage.getItem(key + '--expires')
-    let timestamp  = (Date.now() / 1000);
-
-    if (timestamp > expiration) {
+    if (isCacheExpired(key)) {
         localStorage.removeItem(key)
         localStorage.removeItem(key + '--expires')
     }
@@ -58,10 +55,25 @@ export function getCacheData(key) {
     return data
 }
 
+
 /**
- * Need to check sun data cache to see if we're after midnight local time
+ * Check cache if expired. Expire cache if past midnight.
+ *
+ * @param {string} key
+ * @return {boolean}
  */
-function isSunCacheExpired(key) {
+function isCacheExpired(key) {
     let expiration = localStorage.getItem(key + '--expires')
-    let timestamp  = (Date.now() / 1000);
+    let timestamp  = (Date.now() / 1000)
+    let midnight   = new Date().setHours(24, 0, 0, 0)
+
+    if (timestamp > expiration) {
+        return true
+    }
+
+    if (timestamp > midnight) {
+        return true
+    }
+
+    return false
 }
