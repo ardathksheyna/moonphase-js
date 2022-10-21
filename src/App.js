@@ -6,6 +6,7 @@ import {DataTableSun} from "./components/DataTable_Sun"
 import {useEffect, useState} from "react"
 import {getPosition, getSunRiseSet, timeOfDay} from "./components/helpers/sundata"
 import {getWeatherData} from "./components/helpers/weatherdata"
+import {CurrentConditions} from "./components/CurrentConditions"
 
 function App() {
     const [position, setPosition] = useState({ position: {}})
@@ -36,6 +37,7 @@ function App() {
                 </header>
                 <Moon />
                 <div className="clouds"></div>
+                <CurrentConditions props={currentWeather} />
                 <DataTableMoon />
                 <DataTableSun sunTimes={sunTimes} />
                 <footer className="ground-pane grass row">

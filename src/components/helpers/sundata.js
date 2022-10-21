@@ -1,6 +1,6 @@
 import moment from "moment/moment"
 import {currentTime} from "./moonfx"
-import { getCacheData, setCacheData, WEATHER_DATA, SUN_DATA } from "./cache"
+import { getCacheData, setCacheData, SUN_DATA } from "./cache"
 
 const END_POINT = 'https://api.sunrise-sunset.org/json'
 

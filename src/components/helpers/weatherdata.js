@@ -28,3 +28,7 @@ export async function getWeatherData(location) {
 
     return data
 }
+
+export function getCurrentWeather(data) {
+
+}
