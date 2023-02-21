@@ -381,13 +381,27 @@ Columns/Rows
   }
 
   &.weather-data {
-    right: calc(100% * 0.5 - (25%));
+    right: calc(100vh - 18%);
     top: 300px;
+    width: 36%;
+  }
+
+  &.sub {
+    height: auto;
+    padding: unset;
+    width: 350px;
+    left: calc(100% / 2 - 125px);
+    position: relative;
   }
 
   > li {
     text-align: left;
     display: table-row;
+  }
+
+  .table-caption {
+    display: table-caption;
+    text-align: center;
   }
 
   .label {
