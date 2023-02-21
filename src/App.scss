@@ -380,6 +380,11 @@ Columns/Rows
     left: calc(70% - 120px);
   }
 
+  &.weather-data {
+    right: calc(100% * 0.5 - (25%));
+    top: 300px;
+  }
+
   > li {
     text-align: left;
     display: table-row;

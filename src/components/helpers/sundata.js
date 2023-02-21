@@ -38,7 +38,7 @@ export async function getSunRiseSet(position) {
     }
 
     // set cache
-    setCacheData(SUN_DATA, JSON.stringify(data.results));
+    setCacheData(SUN_DATA, JSON.stringify(data.results), ((Date.now() / 1000) + 43200));
 
     return data.results;
 }

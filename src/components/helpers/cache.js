@@ -14,25 +14,18 @@ if (typeof window.localStorage !== 'undefined') {
 /**
  * Set data in browser cache using LocalStorage
  *
- * @param {string} key
- * @param {string} data
- * @param {string} type
+ * @param {string} key Name of cache key
+ * @param {string} data Data to be cached
+ * @param {string} ttl Interval before data refresh in seconds
  * @returns {void}
  */
-export function setCacheData(key, data, type) {
+export function setCacheData(key, data, ttl:number) {
     if (!localStorage) {
         return
     }
 
-    let expires = 0
-    if (!type || type === 'sun') {
-        expires = ((Date.now() / 1000) + 43200)
-    } else {
-        expires = ((Date.now() / 1000) + 3600)
-    }
-
     localStorage.setItem(key, data)
-    localStorage.setItem(key + '--expires', expires)
+    localStorage.setItem(key + '--expires', ttl)
 }
 
 /**
