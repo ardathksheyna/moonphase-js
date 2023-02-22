@@ -2,12 +2,14 @@ import {getCacheData, setCacheData, WEATHER_DATA} from "./helpers/cache"
 import {getHumanReadableDirection} from "./helpers/weatherdata"
 import {isNumber} from "use-http/dist/cjs/utils"
 
-interface WeatherProps {
+export interface WeatherProps {
     id: number,
     main: string,
     description: string,
     icon: string,  // not used
 }
+
+export interface WeatherPropsArray extends Array<WeatherProps> {}
 
 interface MainProps {
     temp: number,

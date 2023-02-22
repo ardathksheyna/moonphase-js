@@ -5,7 +5,7 @@ import {DataTableMoon} from "./components/DataTable_Moon"
 import {DataTableSun} from "./components/DataTable_Sun"
 import {useEffect, useState} from "react"
 import {getPosition, getSunRiseSet, timeOfDay} from "./components/helpers/sundata"
-import {getWeatherData} from "./components/helpers/weatherdata"
+import {getCurrentConditionsDisplay, getWeatherData} from "./components/helpers/weatherdata"
 import {CurrentConditions} from "./components/CurrentConditions"
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
     const [sunTimes, setSunTimes] = useState({})
     const [dayTime, setDayTime] = useState({})
     const [currentWeather, setCurrentWeather] = useState({})
+    const [currentWeatherDisplay, setCurrentWeatherDisplay] = useState({})
 
     useEffect(() => {
         getPosition().then((positionData) => {
@@ -23,13 +24,14 @@ function App() {
             })
 
             getWeatherData(positionData).then((weatherData) => {
+                setCurrentWeatherDisplay(getCurrentConditionsDisplay(weatherData.weather))
                 setCurrentWeather(weatherData)
             })
         })
     }, [])
 
     return (
-        <div className={`body ${dayTime}`}>
+        <div className={`body ${dayTime} ${currentWeatherDisplay}`}>
             <PillControl/>
             <main>
                 <header className="screen-reader-text">

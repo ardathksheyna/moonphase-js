@@ -1,4 +1,6 @@
-import {getCacheData, setCacheData, SUN_DATA, WEATHER_DATA} from "./cache"
+import {getCacheData, setCacheData, WEATHER_DATA} from "./cache"
+import {WeatherPropsArray} from "../CurrentConditions"
+import type {WeatherProps} from "../CurrentConditions"
 
 const END_POINT = 'https://api.openweathermap.org/data/2.5/weather'
 
@@ -58,5 +60,16 @@ export function getHumanReadableDirection(deg) {
             return 'NNE'
         case deg < 21.5 && deg > 0:
             return 'N'
+        default:
+            return ''
     }
+}
+
+export function getCurrentConditionsDisplay(weather: WeatherPropsArray) {
+    let currentConditions = []
+    currentConditions.push( weather.map((weather: WeatherProps) => {
+        return weather.description.trim().replace(/\s+/g, '-').toLowerCase()
+    }));
+
+    return currentConditions.join(' ').trim()
 }
